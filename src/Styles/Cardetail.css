@@ -1,0 +1,216 @@
+.Cardetail .parentdetailcar {
+  display: flex;
+}
+.Cardetail .cardetail-right {
+  width: 80%;
+  padding: 40px;
+  background-color: rgb(246, 247, 249);
+}
+.Cardetail .parentswiper .swiper__thumb {
+  cursor: pointer;
+  width: 130%;
+}
+.Cardetail .swiper__thumb .swiper-slide-thumb-active {
+  padding: 10px;
+  border: 2px solid blue;
+  border-radius: 4px; /* Optional: for rounded corners */
+  box-sizing: border-box; /* Ensures padding doesn't break layout */
+}
+.Cardetail .parentswiper .main__swiper {
+  /* width: 80%; */
+  cursor: pointer;
+}
+.Cardetail .swiper__thumb .swiper-slide {
+  height: 100% !important;
+}
+.Cardetail .main__swiper .swipermainback {
+  position: relative;
+}
+.Cardetail .main__swiper .maintext {
+  position: absolute;
+  top: 18px;
+  left: 27px;
+}
+.Cardetail .main__swiper .textdetail {
+  font-size: 25px;
+  width: 70%;
+  color: white;
+  font-weight: 500;
+}
+.Cardetail .main__swiper .textpara {
+  color: white;
+  font-size: 17px;
+  margin-top: 14px;
+  width: 70%;
+}
+.Cardetail .fulldesc .cardetailname {
+  background-color: white;
+  padding: 38px;
+  border-radius: 7px;
+}
+
+.Cardetail .fulldesc .detailnamecar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Cardetail .fulldesc .detailnamecar i {
+  color: red;
+  font-size: 24px;
+}
+.Cardetail .fulldesc .cardetail-headcomp {
+  font-size: 31px;
+  font-weight: 600;
+  color: black;
+  margin: 0;
+}
+.detailcar-favstars {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 10px;
+}
+ .detailcar-favstars i {
+  color: #fbad39;
+  font-size: 20px;
+}
+ .greycolor {
+  color: grey !important;
+  font-size: 20px;
+}
+.Cardetail .fulldesc .reviews {
+  font-size: 20px;
+  color: rgb(110, 122, 144);
+}
+.Cardetail .fulldesc .car-detail-text {
+  margin: 30px 0;
+  color: rgb(110, 122, 144);
+  font-size: 22px;
+  line-height: 34px;
+}
+.Cardetail .fulldesc .cartype {
+  display: flex;
+  gap: 53px;
+  margin-top: 14px;
+}
+.Cardetail .fulldesc .car-typedetail {
+  font-size: 17px;
+  color: rgb(144, 163, 191);
+}
+.Cardetail .fulldesc .car-sport {
+  font-size: 17px;
+  color: rgb(89, 103, 128);
+}
+.Cardetail .fulldesc .nissancar {
+  margin-top: 68px;
+}
+.Cardetail .reviews-section {
+  background: white;
+  margin-top: 27px;
+  padding: 30px;
+  border-radius: 7px;
+}
+.Cardetail .reviews-section .review-no {
+  border-radius: 4px;
+  width: 40px;
+  height: 31px;
+  background: rgb(53, 99, 233);
+  font-size: 14px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+.Cardetail .reviews-section .reviewcount {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 23px;
+}
+.Cardetail .reviews-section .review-head {
+  font-size: 17px;
+  color: black;
+  font-weight: 600;
+}
+
+.Cardetail .reviews-section .profile-review {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.Cardetail .reviews-section .left-review {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-right: auto;
+}
+
+.Cardetail .reviews-section .review-name {
+  font-weight: 600;
+  margin: 0;
+  font-size: 20px;
+  color: black;
+}
+
+.Cardetail .reviews-section .review-date {
+  font-size: 14px;
+  color: gray;
+  margin: 0;
+}
+.Cardetail .reviews-section .review-text {
+  margin-top: 6px;
+  margin-bottom: 85px;
+  margin-left: 58px;
+  color: rgb(113, 117, 123);
+}
+
+.Cardetail .reviews-section .review-role {
+  color: rgb(144, 163, 191);
+  font-size: 14px;
+}
+
+.Cardetail .Recent-cars {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 49px;
+}
+.Cardetail .Recent-cars .recent-head {
+  font-size: 17px;
+  color: rgb(144, 163, 191);
+}
+.Cardetail .Recent-cars a {
+  font-size: 17px;
+  color: rgb(53, 99, 233);
+  text-decoration: none;
+}
+.Cardetail .fav-reviewstars {
+  font-size: 15px;
+  color: #fbad39;
+}
+.Cardetail .changecolor {
+  color: grey;
+}
+.Cardetail .showallcontent {
+  text-align: center;
+  font-size: 14px;
+  color: rgb(151, 169, 191);
+}
+.Cardetail .showallcontent i {
+  color: rgb(151, 169, 191);
+  font-size: 17px;
+}
+.Cardetail .cartype .type-car {
+  display: flex;
+  flex-direction: column;
+  gap: 37px;
+  align-items: center;
+}
+.car-function {
+  display: flex;
+  flex-direction: column;
+  gap: 37px;
+  align-items: center;
+}

@@ -1,0 +1,253 @@
+.Payment {
+  background-color: rgb(246, 247, 249);
+  padding: 20px;
+}
+.Payment .custom-container {
+  padding: 0px 30px;
+}
+.Payment .payment-billinginfo {
+  background-color: white;
+  padding: 31px;
+  border-radius: 8px;
+}
+.Payment .payment-billinginfo .bill-head {
+  font-size: 18px;
+  color: black;
+  font-weight: 600;
+}
+.Payment .payment-billinginfo .billing-desc {
+  display: flex;
+  justify-content: space-between;
+}
+.Payment .payment-billinginfo .billing-detail {
+  color: rgb(171, 186, 206);
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+.Payment .payment-billinginfo .input-field {
+  border-radius: 8px;
+  padding: 14px 30px 16px;
+  width: 100%;
+  border: none;
+  background: rgb(240 242 245);
+  pointer-events: auto;
+}
+.Payment .input-field::placeholder {
+  color: rgb(171, 186, 206);
+  font-size: 15px;
+}
+.Payment .parent-input {
+  display: flex;
+  gap: 18px;
+}
+.Payment .payment-billinginfo .billing-name {
+  font-size: 17px;
+  color: black;
+}
+.Payment .payment-billinginfo .billing-input {
+  margin-top: 15px;
+}
+.Payment .rental-info {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+}
+.Payment .payment-billinginfo .rental-car {
+  display: block;
+}
+.Payment .payment-billinginfo .align-rent {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 26px 0;
+  border-bottom: 1px solid rgb(232 233 236);
+}
+.Payment .payment-billinginfo .fav-rent {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.Payment .payment-billinginfo .rental-subtotal {
+  font-size: 14px;
+  color: rgb(171, 186, 206);
+}
+.Payment .payment-billinginfo .rental-dollarprice {
+  font-size: 14px;
+  color: black;
+  font-weight: 500;
+}
+.Payment .payment-billinginfo .rental-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 27px;
+}
+
+.Payment .payment-billinginfo .input-wrapper {
+  position: relative;
+  width: 100%;
+  z-index: 9;
+}
+
+.Payment .payment-billinginfo .apply-btn {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  bottom: 5px;
+  /* background-color: #007bff; */
+  color: black;
+  font-weight: 500;
+  border: none;
+  padding: 0 25px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 15px;
+}
+.Payment .rental-comp {
+  margin-top: 29px;
+}
+/* dropdown */
+
+.Payment .payment-billinginfo .dropdown-wrapper {
+  position: relative;
+  z-index: 10;
+}
+
+.Payment .payment-billinginfo .dropdown-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.Payment .payment-billinginfo .dropdown-menu {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  border: 1px solid #bcb5b5;
+  background-color: #7a7878;
+
+  overflow-y: auto;
+  z-index: 999;
+  margin-top: 5px;
+  padding: 0;
+  display: block !important;
+  float: left;
+}
+
+.Payment .payment-billinginfo .dropdown-menu li {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.Payment .payment-billinginfo .dropdown-menu li:hover {
+  background-color: #f0f0f0;
+}
+.Payment .payment-billinginfo .credit-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Payment .payment-billinginfo .creditcard-backcolorappear {
+  background: rgb(246, 247, 249);
+  padding: 25px;
+  border-radius: 8px;
+}
+.Payment .payment-billinginfo .card-visa {
+  margin: 0;
+}
+.Payment .payment-billinginfo .custom-color {
+  background: white !important;
+}
+.Payment .payment-billinginfo .payment-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  background-color: #f6f7f9;
+  cursor: pointer;
+}
+
+.payment-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.payment-left input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  /* accent-color: #0070ba;  */
+  display: none;
+}
+.Payment .payment-billinginfo .custom-radio {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #a3b0c2;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.Payment .payment-billinginfo .payment-left label {
+  font-weight: 600;
+  font-size: 16px;
+  color: #222;
+}
+
+.Payment .payment-billinginfo .paypal-logo {
+  width: 93px;
+}
+.radio-label {
+  font-size: 15px;
+  color: #222;
+  font-weight: 500;
+}
+.Payment .confirmation {
+  margin-top: 29px;
+}
+
+.Payment .payment-billinginfo .checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  color: #1a1a1a;
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: #5a67d8;
+  border-radius: 4px;
+  border: 1px solid rgb(144, 163, 191);
+  cursor: pointer;
+}
+.Payment .payment-billinginfo .box-check {
+  cursor: pointer;
+  margin-left: 18px;
+}
+
+.Payment .payment-billinginfo .confirm-box {
+  display: flex;
+  justify-content: left;
+}
+.Payment .payment-billinginfo .creditlabel {
+  
+  margin:0;
+}
+.Payment .payment-billinginfo .confirm-btn {
+  margin-top: 20px;
+}
+
+.Payment .payment-billinginfo .layer-logo {
+  margin: 35px 0;
+}
+.Payment .fav-rent{
+ 
+}
+
+

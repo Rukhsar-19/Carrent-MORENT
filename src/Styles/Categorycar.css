@@ -1,0 +1,262 @@
+.type-leftside {
+  width: 20%;
+  padding: 25px;
+}
+
+/* new */
+.type-filter {
+  color: #a0aec0;
+  width: 250px;
+}
+
+.filter-heading {
+  font-weight: 500;
+  letter-spacing: 2px;
+  margin: 31px 0;
+  font-size: 17px;
+  text-transform: uppercase;
+  color: rgb(192 194 200);
+}
+
+.filter-options {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 500;
+  gap: 3px;
+  margin-bottom: 32px;
+  cursor: pointer;
+  position: relative;
+  font-weight: 4F00;
+  color: rgb(89, 103, 128);
+  width: 100%;
+}
+
+.checkbox-label input[type="checkbox"] {
+  display: none;
+}
+
+.custom-check {
+  width: 30px;
+  height: 30px;
+  border: 2px solid #a0aec0;
+  border-radius: 9px;
+  margin-right: 12px;
+  position: relative;
+  background-color: transparent;
+  transition: all 0.2s ease;
+}
+
+.checkbox-label input[type="checkbox"]:checked + .custom-check {
+  background-color: #3b82f6;
+  border-color: #3b82f6;
+}
+
+.checkbox-label input[type="checkbox"]:checked + .custom-check::after {
+  content: "✔";
+  color: white;
+  font-size: 14px;
+  position: absolute;
+  top: 3px;
+  left: 7px;
+}
+
+.count {
+  font-size: 16px;
+  color: rgb(144, 163, 191);
+}
+
+/* new */
+.mainhead {
+  font-size: 15px;
+  color: #abb1bb;
+  margin: 34px 0;
+}
+
+.range-bar-container {
+  position: relative;
+  width: 100%;
+  height: 11px;
+  background-color: #aab4c4;
+  border-radius: 10px;
+  height: 11px;
+  border-radius: 10px;
+}
+.range-bar-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  border-radius: 5px;
+  width: 70%;
+  background-color: #3b68ff;
+}
+
+.range-circle {
+  position: absolute;
+  top: 50%;
+  left: 68%;
+  transform: translate(-68%, -50%);
+  width: 25px;
+  height: 25px;
+  background-color: #3b68ff;
+  border: 5px solid white;
+  border-radius: 50%;
+  box-sizing: border-box;
+  z-index: 2;
+}
+.max-range {
+  font-size: 19px;
+  color: rgb(89, 103, 128);
+  margin-top: 10px;
+}
+.parent-type {
+  display: flex;
+}
+
+.category-rightside {
+  width: 80%;
+  background-color: rgb(246, 247, 249);
+  padding: 40px;
+}
+.pickup-category {
+  margin: 0;
+  margin-bottom: 20px;
+}
+.categorycardback {
+  background: white;
+  padding: 27px;
+  width: 100%;
+  position: relative;
+  z-index: 9;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 10px;
+}
+.nogap {
+  padding-right: 1px !important;
+}
+.loct-dist {
+  gap: 7px;
+}
+.locationbtn {
+  width: 60px;
+  height: 60px;
+  border-radius: 9px;
+  padding: 10px;
+  background-color: #3b68ff;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  top: 56px;
+  left: -45px;
+}
+.locationbtn i {
+  color: white;
+  font-size: 24px;
+}
+.detail-carrent {
+  background: white;
+  padding: 25px;
+  margin-top: 28px;
+  border-radius: 5px;
+}
+.detail-carrent .fav-card i {
+  color: red;
+  font-size: 25px;
+}
+.nocolor {
+  color: #90a3bf !important;
+}
+.detail-carrent .fav-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.detail-carrent .detail-head {
+  font-size: 18px;
+  color: black;
+  font-weight: 600;
+  margin: 0;
+}
+
+.detail-carrent .detail-carname {
+  color: rgb(144, 163, 191);
+  font-size: 14px;
+}
+.detail-carrent .carrentimg {
+  text-align: center;
+  margin: 35px 0;
+}
+.detail-carrent .detailcar-logos {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 35px;
+}
+.detail-carrent .logos-car {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.detail-carrent .logos-car i {
+  font-size: 23px;
+  color: #90a3bf;
+}
+.detail-carrent .logos-desc {
+  font-size: 15px;
+  color: #90a3bf;
+}
+.detailcar-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rentnowbtn {
+  background: #3b82f6;
+  border-radius: 5px;
+  padding: 12px 23px;
+  border: none;
+  color: white;
+  font-size: 15px;
+}
+.showmorebtn {
+  text-align: center;
+  margin-top: 60px;
+  position: relative;
+}
+.carno {
+  text-align: right;
+  font-size: 13px;
+  color: #90a3bf;
+  position: absolute;
+  bottom: 20px;
+  right: 0;
+}
+.detailcar-totalprice {
+  font-size: 20px;
+  color: black;
+  font-weight: 600;
+}
+.detailcar-day {
+  color: #90a3bf;
+  font-size: 14px;
+  font-weight: 600;
+}
+.priceintotal {
+  font-size: 15px;
+  color: #90a3bf;
+  text-decoration: line-through;
+}
+.car-pickup {
+  margin: 0;
+}

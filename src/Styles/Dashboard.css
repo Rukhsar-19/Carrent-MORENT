@@ -1,0 +1,280 @@
+.Dashboard .Mainmenu .mainmenulist li a {
+  display: flex;
+  gap: 20px;
+  text-decoration: none;
+  color: rgb(180 196 220);
+  margin-bottom: 19px;
+  font-size: 16px;
+  font-weight: 500;
+  align-items: center;
+  width: 100%;
+  transition: background 0.3s, color 0.3s;
+  border-radius: 9px;
+  padding: 0 5px;
+}
+.Dashboard .Mainmenu .mainmenulist li a:hover {
+  background-color: #007bff;
+  color: white;
+  
+}
+.Dashboard .Mainmenu .mainmenulist li {
+  display: flex;
+  gap: 10px;
+}
+.Dashboard .Mainmenu .mainmenulist li a i {
+  font-size: 29px;
+}
+.Dashboard .Mainmenu .main-headmenu {
+  font-size: 15px;
+  margin-bottom: 20px;
+  padding-top: 20px;
+  color: #c5c9d0;
+  text-transform: uppercase;
+}
+.Dashboard .Mainmenu .modeparent {
+  width: 105px;
+  height: 50px;
+
+  background-color: rgb(246, 247, 249);
+  border-radius: 46px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 8px;
+}
+.Dashboard .modeparent .sun-icon {
+  font-size: 26px;
+  color: white;
+}
+
+.Dashboard .modeparent .brightmode-circle {
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(53, 99, 233);
+  justify-content: center;
+}
+.Dashboard .modeparent .moon-icon {
+  color: grey;
+  font-size: 30px;
+}
+.Mainmenuparent {
+  display: flex;
+}
+.Menu-left {
+  width: 20%;
+  padding: 24px;
+}
+.menu-right {
+  width: 80%;
+  background-color: rgb(246, 247, 249);
+  padding: 30px;
+}
+
+.Dashboard .logoutsec {
+  margin-top: 120px;
+}
+.detailcardbackground {
+  /* background-color: rgb(246, 247, 249); */
+  /* padding: 40px; */
+}
+.Dashboard .detailcard {
+  background-color: white;
+  padding: 23px;
+  border-radius: 7px;
+}
+.Dashboard .detailcardbackground .detail-head {
+  font-size: 19px;
+  color: black;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.card-pic {
+  display: flex;
+  margin: 34px 0;
+  justify-content: space-between;
+}
+
+.car-name-head {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.card-name {
+  font-size: 15px;
+}
+.car-model {
+  font-size: 14px;
+}
+
+.card-model {
+  font-size: 24px;
+  color: black;
+  font-weight: bold;
+}
+.cardrightparent .card-pic{
+  margin: 0;
+  padding: 15px 0;
+  border-bottom: 1px solid rgb(218 222 227);
+}
+.cardrightparent .card-pic:last-child{
+  border: none
+}
+.pickupparent {
+  display: flex;
+  align-items: center;
+  margin: 31px  0;
+}
+
+.pickup-radio {
+  display: none;
+}
+
+.pickup-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  /* margin-top: 38px; */
+}
+
+.pickup {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border: 5px solid rgb(194, 208, 248);
+  position: relative;
+  /* transition: all 0.3s ease; */
+}
+
+.pickupparent input:checked + .pickup-label .pickup {
+  background: rgb(53, 99, 233);
+}
+.pickupparent input:checked + .pickup-label .pickup::after {
+  background-color: rgb(53, 99, 233);
+}
+.pickup::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  background-color: transparent;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: background-color 0.3s ease;
+}
+
+.picup-head {
+  font-size: 21px;
+  margin: 0;
+}
+
+.loc-name {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+.location-parent {
+  display: flex;
+  justify-content: space-between;
+}
+.location-head {
+  border-right: 1px solid rgb(144 163 191);
+
+  padding-right: 25px;
+}
+.loaction-name {
+  font-size: 19px;
+  color: black;
+  font-weight: 600;
+}
+.loc-para {
+  font-size: 14px;
+  color: rgb(144 163 191);
+}
+.location-border {
+  border: none;
+  /* padding: 0 20px; */
+}
+/* .loc-gap {
+  padding: 0 20px;
+} */
+
+.dropoff {
+  background: rgb(84, 166, 255);
+  border: 5px solid rgb(206, 231, 254);
+}
+.location-end {
+  border-bottom: 1px solid rgb(144 163 191);
+  margin-top: 39px;
+}
+.rental-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+}
+.rental-price .rental-head {
+  font-size: 20px;
+  font-weight: bold;
+}
+.rent-pricedollar {
+  font-size: 30px;
+  font-weight: bold;
+}
+.rental-price .total-rent {
+  font-size: 14px;
+  color: rgb(144 163 191);
+}
+.Dashboard .recent {
+  background: white;
+  margin-top: 20px;
+  padding: 23px;
+  border-radius: 7px;
+}
+.Dashboard .recent .recenttransaction {
+  display: flex;
+  justify-content: space-between;
+}
+.Dashboard .recenttransaction .recenthead {
+  font-size: 18px;
+  color: black;
+  font-weight: 600;
+}
+.recenttransaction .recentbtn {
+  color: rgb(103, 138, 238);
+  font-size: 14px;
+}
+.car-smallfont {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.card-smallname {
+  font-size: 13px;
+  color: rgb(154, 166, 177);
+}
+.car-pricetotal {
+  font-size: 18px;
+  font-weight: bold;
+}
+.card2{
+  background-color: white;
+  padding: 20px;
+}
+
+
+.chart-style{
+  width:400px !important;
+  height:400px !important;
+}
+
+
