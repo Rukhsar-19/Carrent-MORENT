@@ -77,3 +77,24 @@ export interface User {
     zipcode: string;
   };
 }
+
+
+// @types/ApiResponses.ts
+export interface Car {
+  id: number;
+  car: string;
+  car_model: string;
+  car_color: string;
+  car_model_year: number;
+  car_vin: string;
+  price: string;
+  availability: boolean;
+  // Add optional fields if your API provides them
+  car_type?: string;
+  transmission?: string;
+  fuel_type?: string;
+  capacity?: number;
+  images?: string[]; // Array of image URLs
+  description?: string;
+  rating?: number;
+}

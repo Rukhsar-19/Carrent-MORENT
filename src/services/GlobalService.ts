@@ -30,6 +30,9 @@ import { apiRequest, getRequest } from "./NetworkService";
 
 export const baseUrl = "https://myfakeapi.com/api";
 
+
+
+
 export const getCar = async (): Promise<{ cars: Car[] }> => {
   try {
     const { data } = await axios.get(`${baseUrl}/${ApiNames.car}`);
@@ -74,3 +77,29 @@ export const getCarsByCapacity = async (capacity: number): Promise<Car[]> => {
     throw error;
   }
 };
+
+
+// Get a specific car by ID
+export const getCarById = async (id: number): Promise<Car> => {
+  try {
+    const { data } = await axios.get(`${baseUrl}/cars/${id}`);
+    return data;
+  } catch (error) {
+    console.error(`Error fetching car with id ${id}:`, error);
+    throw error;
+  }
+};
+
+// Get multiple cars by IDs (for recommendations)
+export const getCarsByIds = async (ids: number[]): Promise<Car[]> => {
+  try {
+    const cars = await getCar();
+    return cars.cars.filter(car => ids.includes(car.id));
+  } catch (error) {
+    console.error("Error fetching cars by IDs:", error);
+    throw error;
+  }
+}
+
+
+
