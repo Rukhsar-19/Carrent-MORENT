@@ -9,7 +9,6 @@
 //       <div className="custom-container">
 //         <div className="row">
 //           <div className="col-lg-2">
-       
 
 //             <div className="header-logo">
 //               <img src={headerlogo} width={200} />
@@ -43,7 +42,7 @@
 
 //               </div>
 //             </div>
-           
+
 //           </div>
 //         </div>
 //       </div>
@@ -52,8 +51,6 @@
 // };
 
 // export default Header;
-
-
 
 // Components/Header.tsx
 import React, { useState, useEffect, useRef } from "react";
@@ -84,13 +81,13 @@ const Header = () => {
     "Automatic",
     "Manual",
     "Family Car",
-    "Convertible"
+    "Convertible",
   ];
 
   // Filter suggestions based on input
   useEffect(() => {
     if (searchTerm.trim()) {
-      const filtered = commonSuggestions.filter(suggestion =>
+      const filtered = commonSuggestions.filter((suggestion) =>
         suggestion.toLowerCase().includes(searchTerm.toLowerCase())
       );
       setSuggestions(filtered);
@@ -104,14 +101,17 @@ const Header = () => {
   // Close suggestions when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
+      if (
+        searchRef.current &&
+        !searchRef.current.contains(event.target as Node)
+      ) {
         setShowSuggestions(false);
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
 
@@ -124,7 +124,7 @@ const Header = () => {
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
       handleSearch();
     }
   };
@@ -146,22 +146,22 @@ const Header = () => {
         <div className="row align-items-center">
           <div className="col-lg-2">
             <div className="header-logo">
-              <img 
-                src={headerlogo} 
-                width={200} 
+              <img
+                src={headerlogo}
+                width={200}
                 alt="Logo"
                 onClick={() => navigate("/")}
-                style={{ cursor: 'pointer' }}
+                style={{ cursor: "pointer" }}
               />
             </div>
           </div>
-          
+
           <div className="col-lg-4" ref={searchRef}>
             <div className="round-searchbar search-container">
-              <i 
-                className="ri-search-2-line search-icon" 
+              <i
+                className="ri-search-2-line search-icon"
                 onClick={handleSearch}
-                style={{ cursor: 'pointer' }}
+                style={{ cursor: "pointer" }}
                 title="Search"
               ></i>
               <input
@@ -173,23 +173,23 @@ const Header = () => {
                 onKeyPress={handleKeyPress}
                 onFocus={() => searchTerm.trim() && setShowSuggestions(true)}
               />
-              
+
               {searchTerm && (
-                <i 
-                  className="ri-close-line clear-icon" 
+                <i
+                  className="ri-close-line clear-icon"
                   onClick={handleClearSearch}
-                  style={{ cursor: 'pointer' }}
+                  style={{ cursor: "pointer" }}
                   title="Clear search"
                 ></i>
               )}
-              
-              <i 
-                className="ri-equalizer-2-fill filter-icon" 
-                onClick={() => navigate('/carrent')}
-                style={{ cursor: 'pointer' }}
+
+              <i
+                className="ri-equalizer-2-fill filter-icon"
+                onClick={() => navigate("/carrent")}
+                style={{ cursor: "pointer" }}
                 title="Advanced filters"
               ></i>
-              
+
               {/* Search Suggestions Dropdown */}
               {showSuggestions && suggestions.length > 0 && (
                 <div className="search-suggestions">
@@ -197,7 +197,7 @@ const Header = () => {
                     <small className="text-muted">Suggestions:</small>
                   </div>
                   {suggestions.map((suggestion, index) => (
-                    <div 
+                    <div
                       key={index}
                       className="suggestion-item"
                       onClick={() => handleSuggestionClick(suggestion)}
@@ -213,7 +213,10 @@ const Header = () => {
 
           <div className="col-lg-6">
             <div className="header-icons">
-              <div className="headericon-circle" onClick={() => navigate('/favorites')}>
+              <div
+                className="headericon-circle"
+                onClick={() => navigate("/favorites")}
+              >
                 <i className="ri-heart-3-fill"></i>
               </div>
               <div className="headericon-circle">

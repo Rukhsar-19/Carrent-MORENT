@@ -29,8 +29,15 @@ const CategoryScreen = () => {
 
   // Static image mapping
   const carImages = [
-    carrent1, carrent2, carrent1, carrent4, carrent5,
-    carrent6, carrent7, carrent8, carrent9
+    carrent1,
+    carrent2,
+    carrent1,
+    carrent4,
+    carrent5,
+    carrent6,
+    carrent7,
+    carrent8,
+    carrent9,
   ];
 
   const getCarImage = (index: number) => {
@@ -59,22 +66,20 @@ const CategoryScreen = () => {
     let result = [...cars];
 
     if (filters.type) {
-      result = result.filter(car => 
-        car.car_type?.toLowerCase() === filters.type.toLowerCase()
+      result = result.filter(
+        (car) => car.car_type?.toLowerCase() === filters.type.toLowerCase()
       );
     }
 
     if (filters.capacity) {
       const capacityNum = parseInt(filters.capacity);
-      result = result.filter(car => 
-        car.capacity === capacityNum
-      );
+      result = result.filter((car) => car.capacity === capacityNum);
     }
 
     // Filter by price (assuming price is in format "$99.00")
     if (filters.price < 100) {
-      result = result.filter(car => {
-        const carPrice = parseFloat(car.price.replace('$', ''));
+      result = result.filter((car) => {
+        const carPrice = parseFloat(car.price.replace("$", ""));
         return carPrice <= filters.price;
       });
     }
@@ -83,23 +88,23 @@ const CategoryScreen = () => {
   }, [filters, cars]);
 
   const handleTypeFilter = (type: string) => {
-    setFilters(prev => ({
+    setFilters((prev) => ({
       ...prev,
-      type: prev.type === type ? "" : type
+      type: prev.type === type ? "" : type,
     }));
   };
 
   const handleCapacityFilter = (capacity: string) => {
-    setFilters(prev => ({
+    setFilters((prev) => ({
       ...prev,
-      capacity: prev.capacity === capacity ? "" : capacity
+      capacity: prev.capacity === capacity ? "" : capacity,
     }));
   };
 
   const handlePriceChange = (price: number) => {
-    setFilters(prev => ({
+    setFilters((prev) => ({
       ...prev,
-      price
+      price,
     }));
   };
 
@@ -131,22 +136,26 @@ const CategoryScreen = () => {
             <div className="type-filter">
               <h3 className="filter-heading">TYPE</h3>
               <ul className="filter-options">
-                {['Sport', 'SUV', 'MPV', 'Sedan', 'Coupe', 'Hatchback'].map(type => {
-                  const count = cars.filter(car => car.car_type === type).length;
-                  return (
-                    <li key={type}>
-                      <label className="checkbox-label">
-                        <input 
-                          type="checkbox" 
-                          checked={filters.type === type}
-                          onChange={() => handleTypeFilter(type)}
-                        />
-                        <span className="custom-check"></span>
-                        {type} <span className="count">({count})</span>
-                      </label>
-                    </li>
-                  );
-                })}
+                {["Sport", "SUV", "MPV", "Sedan", "Coupe", "Hatchback"].map(
+                  (type) => {
+                    const count = cars.filter(
+                      (car) => car.car_type === type
+                    ).length;
+                    return (
+                      <li key={type}>
+                        <label className="checkbox-label">
+                          <input
+                            type="checkbox"
+                            checked={filters.type === type}
+                            onChange={() => handleTypeFilter(type)}
+                          />
+                          <span className="custom-check"></span>
+                          {type} <span className="count">({count})</span>
+                        </label>
+                      </li>
+                    );
+                  }
+                )}
               </ul>
             </div>
 
@@ -155,18 +164,23 @@ const CategoryScreen = () => {
               <div className="type-filter">
                 <h3 className="filter-heading">CAPACITY</h3>
                 <ul className="filter-options">
-                  {[2, 4, 6, 8].map(capacity => {
-                    const count = cars.filter(car => car.capacity === capacity).length;
+                  {[2, 4, 6, 8].map((capacity) => {
+                    const count = cars.filter(
+                      (car) => car.capacity === capacity
+                    ).length;
                     return (
                       <li key={capacity}>
                         <label className="checkbox-label">
-                          <input 
-                            type="checkbox" 
+                          <input
+                            type="checkbox"
                             checked={filters.capacity === capacity.toString()}
-                            onChange={() => handleCapacityFilter(capacity.toString())}
+                            onChange={() =>
+                              handleCapacityFilter(capacity.toString())
+                            }
                           />
                           <span className="custom-check"></span>
-                          {capacity} Person <span className="count">({count})</span>
+                          {capacity} Person{" "}
+                          <span className="count">({count})</span>
                         </label>
                       </li>
                     );
@@ -179,14 +193,14 @@ const CategoryScreen = () => {
             <div className="price-menu">
               <h2 className="mainhead">PRICE</h2>
               {/* <div className="range-bar-container"> */}
-                <input 
-                  type="range" 
-                  min="0" 
-                  max="100" 
-                  value={filters.price}
-                  onChange={(e) => handlePriceChange(parseInt(e.target.value))}
-                  className="price-range"
-                />
+              <input
+                type="range"
+                min="0"
+                max="100"
+                value={filters.price}
+                onChange={(e) => handlePriceChange(parseInt(e.target.value))}
+                className="price-range"
+              />
               {/* </div> */}
               <p className="max-range">Max. ${filters.price.toFixed(2)}</p>
             </div>
@@ -209,7 +223,10 @@ const CategoryScreen = () => {
                           className="pickup-radio"
                           defaultChecked
                         />
-                        <label htmlFor="pick-up" className="pickup-label car-pickup">
+                        <label
+                          htmlFor="pick-up"
+                          className="pickup-label car-pickup"
+                        >
                           <div className="pickup"></div>
                           <h2 className="picup-head">pick-up</h2>
                         </label>
@@ -217,7 +234,7 @@ const CategoryScreen = () => {
                       {/* ... pickup location/date/time inputs ... */}
                     </div>
                   </div>
-                  
+
                   <div className="col-lg-6">
                     <div className="categorycardback">
                       {/* Drop-off section remains static */}
@@ -228,7 +245,10 @@ const CategoryScreen = () => {
                           name="payment"
                           className="pickup-radio"
                         />
-                        <label htmlFor="drop-off" className="pickup-label car-pickup">
+                        <label
+                          htmlFor="drop-off"
+                          className="pickup-label car-pickup"
+                        >
                           <div className="pickup"></div>
                           <h2 className="picup-head">Drop-off</h2>
                         </label>
@@ -242,7 +262,11 @@ const CategoryScreen = () => {
                     filteredCars.map((car, index) => (
                       <div key={car.id} className="col-lg-4 mb-4">
                         <Link
-                          to={`/car/${car.car.toLowerCase().replace(/\s+/g, '-')}-${car.car_model.toLowerCase().replace(/\s+/g, '-')}`}
+                          to={`/car/${car.car
+                            .toLowerCase()
+                            .replace(/\s+/g, "-")}-${car.car_model
+                            .toLowerCase()
+                            .replace(/\s+/g, "-")}`}
                           style={{ textDecoration: "none", color: "inherit" }}
                         >
                           <div className="detail-carrent">
@@ -250,16 +274,26 @@ const CategoryScreen = () => {
                               {/* Top Section */}
                               <div className="fav-card">
                                 <div className="head-name">
-                                  <h2 className="detail-head">{car.car} {car.car_model}</h2>
-                                  <p className="detail-carname">{car.car_type || 'Car'}</p>
+                                  <h2 className="detail-head">
+                                    {car.car} {car.car_model}
+                                  </h2>
+                                  <p className="detail-carname">
+                                    {car.car_type || "Car"}
+                                  </p>
                                 </div>
-                                <i className={car.isFavorite ? "ri-heart-3-fill" : "ri-heart-line nocolor"}></i>
+                                <i
+                                  className={
+                                    car.isFavorite
+                                      ? "ri-heart-3-fill"
+                                      : "ri-heart-line nocolor"
+                                  }
+                                ></i>
                               </div>
 
                               {/* Car Image */}
                               <div className="carrentimg">
-                                <img 
-                                  src={getCarImage(index)} 
+                                <img
+                                  src={getCarImage(index)}
                                   alt={`${car.car} ${car.car_model}`}
                                   width={300}
                                 />
@@ -269,32 +303,44 @@ const CategoryScreen = () => {
                               <div className="detailcar-logos">
                                 <div className="logos-car">
                                   <i className="ri-gas-station-fill"></i>
-                                  <p className="logos-desc">{car.fuel_capacity || 'N/A'}</p>
+                                  <p className="logos-desc">
+                                    {car.fuel_capacity || "N/A"}
+                                  </p>
                                 </div>
                                 <div className="logos-car">
                                   <i className="ri-loader-3-line"></i>
-                                  <p className="logos-desc">{car.transmission || 'Manual'}</p>
+                                  <p className="logos-desc">
+                                    {car.transmission || "Manual"}
+                                  </p>
                                 </div>
                                 <div className="logos-car">
                                   <i className="ri-group-line"></i>
-                                  <p className="logos-desc">{car.capacity || 4} People</p>
+                                  <p className="logos-desc">
+                                    {car.capacity || 4} People
+                                  </p>
                                 </div>
                               </div>
 
                               {/* Price and Action */}
                               <div className="detailcar-price">
                                 <p className="detailcar-totalprice">
-                                  {car.price || '$99.00'}/
+                                  {car.price || "$99.00"}/
                                   <span className="detailcar-day"> day</span>
                                   {car.discount_price && (
-                                    <span className="priceintotal">{car.discount_price}</span>
+                                    <span className="priceintotal">
+                                      {car.discount_price}
+                                    </span>
                                   )}
                                 </p>
-                                <button 
-                                  className={`rentnowbtn ${!car.availability ? 'disabled' : ''}`}
+                                <button
+                                  className={`rentnowbtn ${
+                                    !car.availability ? "disabled" : ""
+                                  }`}
                                   disabled={!car.availability}
                                 >
-                                  {car.availability ? 'Rent Now' : 'Unavailable'}
+                                  {car.availability
+                                    ? "Rent Now"
+                                    : "Unavailable"}
                                 </button>
                               </div>
                             </div>
@@ -306,8 +352,10 @@ const CategoryScreen = () => {
                     <div className="col-lg-12">
                       <div className="no-cars-found">
                         <p>No cars found matching your filters.</p>
-                        <button 
-                          onClick={() => setFilters({ type: "", capacity: "", price: 100 })}
+                        <button
+                          onClick={() =>
+                            setFilters({ type: "", capacity: "", price: 100 })
+                          }
                           className="rentnowbtn"
                         >
                           Clear Filters
@@ -321,7 +369,10 @@ const CategoryScreen = () => {
                     <div className="col-lg-12">
                       <div className="showmorebtn">
                         <button className="rentnowbtn">Show more car</button>
-                        <p className="carno">{filteredCars.length} car{filteredCars.length !== 1 ? 's' : ''}</p>
+                        <p className="carno">
+                          {filteredCars.length} car
+                          {filteredCars.length !== 1 ? "s" : ""}
+                        </p>
                       </div>
                     </div>
                   )}

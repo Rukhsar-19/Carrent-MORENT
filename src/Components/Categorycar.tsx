@@ -13,7 +13,7 @@
 // import Footer from "./Footer";
 // // hhh
 // import { useEffect, useState } from "react";
-// import { getCar } from "../services/GlobalService"; 
+// import { getCar } from "../services/GlobalService";
 // import { Car } from "../@types/ApiResponses";
 
 // // jjj
@@ -25,7 +25,7 @@
 //     const fetchCars = async () => {
 //       try {
 //         const data = await getCar();
-//         setCars(data.cars); 
+//         setCars(data.cars);
 //       } catch (error) {
 //         console.error("Error fetching cars:", error);
 //       }
