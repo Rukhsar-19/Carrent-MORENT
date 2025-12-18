@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../Styles/Cardetail.css";
 import { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -22,11 +22,30 @@ import { Navigation, Thumbs, FreeMode } from "swiper/modules";
 import Footer from "./Footer";
 // button route add this
 import { useNavigate } from "react-router";
+import { getUser } from "../services/GlobalService";
+import { User } from "../@types/ApiResponses";
 const Cardetail = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
   const [count, setCount] = useState(0);
   // button
   const navigate = useNavigate();
+  // gggg
+  const [users, setUsers] = useState<User[]>([]);
+
+  useEffect(() => {
+    const fetchUsers = async () => {
+      try {
+        const userData = await getUser();
+        console.log("Fetched users:", userData);
+        setUsers(userData);
+      } catch (error) {
+        console.error("Error fetching users:", error);
+      }
+    };
+    fetchUsers();
+  }, []);
+
+  // ggg
   return (
     <>
       <section className="Cardetail">
@@ -164,8 +183,8 @@ const Cardetail = () => {
                             </div>
                           </div>
                         </SwiperSlide>
-                        
-                          <SwiperSlide>
+
+                        <SwiperSlide>
                           <img src={detailthumb2} />
                         </SwiperSlide>
 
@@ -232,11 +251,10 @@ const Cardetail = () => {
                           <p className="car-typedetail">Steering</p>
                           <p className="car-typedetail">Gasoline </p>
                         </div>
-                         <div className="car-function">
+                        <div className="car-function">
                           <p className="car-sport">2 Person</p>
                           <p className="car-sport">70L </p>
                         </div>
-                       
                       </div>
                       {/* 2 */}
                       {/* yy */}
@@ -262,76 +280,59 @@ const Cardetail = () => {
                     </div>
                   </div>
                 </div>
-                {/* reviews */}
+                {/* jjjjjjjjjj */}
                 <div className="col-lg-12">
                   <div className="reviews-section">
                     <div className="reviewcount">
                       <p className="review-head">Reviews</p>
-                      <div className="review-no">13</div>
+                      <div className="review-no">{users.length}</div>
                     </div>
-                    <div className="people-review">
-                      <div className="profile-review">
-                        <div className="left-review">
-                          <img src={profilepic} width={50} height={50} />
-                          <div className="review-tag">
-                            <h2 className="review-name">Alex Stanton</h2>
-                            <p className="review-role"> CEO at Bukalapak</p>
+
+                    {users.slice(0, 2).map((user, index) => (
+                      <div className="people-review" key={index}>
+                        <div className="profile-review">
+                          <div className="left-review">
+                            <img
+                              src={`https://randomuser.me/api/portraits/${
+                                index % 2 === 0 ? "men" : "women"
+                              }/${index + 1}.jpg`}
+                              width={50}
+                              height={50}
+                              alt={user.name}
+                            />
+                            <div className="review-tag">
+                              <h2 className="review-name">{user.name}</h2>
+                              <p className="review-role">
+                                Customer at{" "}
+                                {user.company?.name || "Morent Rentals"}
+                              </p>
+                            </div>
+                          </div>
+
+                          <div className="fav-reviewstars">
+                            <p className="review-date">21 July 2022</p>
+                            <div className="detailcar-favstars">
+                              {[...Array(5)].map((_, i) => (
+                                <i
+                                  key={i}
+                                  className={`ri-star-${
+                                    i < 4 ? "fill" : "line"
+                                  } changecolor`}
+                                ></i>
+                              ))}
+                            </div>
                           </div>
                         </div>
-                        <div className="fav-reviewstars">
-                          <p className="review-date">21 July 2022</p>
-                          <div className="detailcar-favstars">
-                            <i className="ri-star-fill"></i>
-                            <i className="ri-star-fill"></i>
-                            <i className="ri-star-fill"></i>
-                            <i className="ri-star-fill"></i>
-                            <i className="ri-star-line changecolor"></i>
-                          </div>
-                        </div>
-                      </div>
-                      <p className="review-text">
-                        We are very happy with the service from the MORENT App.
-                        Morent has a low price and also a large variety of cars
-                        with good and comfortable facilities. In addition, the
-                        service provided by the officers is also very friendly
-                        and very polite.
-                      </p>
-                    </div>
-                    {/* ppp */}
-                    <div className="people-review">
-                      <div className="profile-review">
-                        <div className="left-review">
-                          <img src={profilepic} width={50} height={50} />
-                          <div className="review-tag">
-                            <h2 className="review-name">Skylar Dias</h2>
-                            <p className="review-role">CEO at Amazon</p>
-                          </div>
-                        </div>
-                        <div className="fav-reviewstars">
-                          <p className="review-date">21 July 2022</p>
-                          <div className="detailcar-favstars">
-                            <i className="ri-star-fill"></i>
-                            <i className="ri-star-fill"></i>
-                            <i className="ri-star-fill"></i>
-                            <i className="ri-star-fill"></i>
-                            <i className="ri-star-line changecolor"></i>
-                          </div>
-                        </div>
-                      </div>
-                      <p className="review-text">
-                        We are greatly helped by the services of the MORENT
-                        Application. Morent has low prices and also a wide
-                        variety of cars with good and comfortable facilities. In
-                        addition, the service provided by the officers is also
-                        very friendly and very polite.
-                      </p>
-                      <div className="show-all">
-                        <p className="showallcontent">
-                          Show All <i className="ri-arrow-down-s-line"></i>
+
+                        <p className="review-text">
+                          We are very happy with the service from the MORENT
+                          App. Morent has a low price and also a large variety
+                          of cars with good and comfortable facilities. The
+                          service provided by the officers is also very friendly
+                          and polite.
                         </p>
                       </div>
-                    </div>
-                    {/* pp */}
+                    ))}
                   </div>
                 </div>
                 {/* rect */}
