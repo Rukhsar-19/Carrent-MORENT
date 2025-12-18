@@ -145,6 +145,10 @@
   align-items: center;
   gap: 12px;
   margin-right: auto;
+
+}
+.Cardetail .reviews-section .left-review img{
+    border-radius: 50px;
 }
 
 .Cardetail .reviews-section .review-name {
